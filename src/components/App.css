@@ -1,0 +1,14 @@
+.app {
+  text-align: center;
+}
+
+.app > header {
+  /* background-color: #222; */
+  height: 15rem;
+  padding: 2rem;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
