@@ -1,14 +1,125 @@
-.app {
-  text-align: center;
+html {
+  font-size: 62.5%;
+/*   width: 100%; */
 }
 
-.app > header {
-  /* background-color: #222; */
-  height: 15rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  /* width: 100%; */
+}
+
+.app {
+  display: flex;
+}
+
+.app header {
   padding: 2rem;
+  background-color: rgb(230,230,230);
+  flex: 1;
+}
+
+.app main {
+  width: 60rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+main input {
+  padding: 1.2rem 0.5rem;
+  border: 0.02rem solid #ccc;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+main input:focus {
+  border-color:#333;
+  outline: none;
+}
+
+button {
+  padding: 1.2rem 1.5rem;
+  background-color: #4CAF50;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  text-transform: uppercase;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+button:focus {
+  border: none;
+  outline: none;
+}
+
+.modal-window {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  font-size: 1.6rem;
+}
+
+.modal-window.open {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modal-window > div {
+  width: 40rem;
+  position: relative;
+  margin: 10% auto;
+  padding: 0.5rem 2rem 1.3rem 2rem;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+@media (max-width:961px)  {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  html {
+    font-size: 50%;
+  }
+
+  .app main {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  button {
+    margin: 2rem;
+    width: 20rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+}
+
+
+@media (max-width:481px)  {
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .app {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .app header {
+    width: 100vw;
+  }
+
+  .app main {
+    margin-top: 4rem;
+    width: 100%;
+  }
 }
